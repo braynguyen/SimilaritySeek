@@ -16,6 +16,18 @@ headers = {
 # "Last Education": string
 # }
 ##
+def request_dummy_info():
+    output_data = {
+        "About": "CS @ University of Pittsburgh | GHC24 Hi, I'm Rachel! I'm an undergraduate computer science student currently based in Pittsburgh. My career interests include software engineering, machine learning and AI, and game development.",
+        "Skills": ["Software Development", "Object-Oriented Programming", "Assembly Language", "CLI", "Java", "Microsoft Office", "Computer Science"], 
+        "Experiences": ["Software Engineer Intern at PNC", "IT Intern at United States Steel Corporation", "Undergraduate Research Assistant at the University of Pittsburgh"],
+        "Interests": [],
+        "Education": "University of Pittsburgh"
+    }
+    return output_data
+
+
+
 def request_info(linkedin):
     params = {
          'linkedin_profile_url': linkedin
