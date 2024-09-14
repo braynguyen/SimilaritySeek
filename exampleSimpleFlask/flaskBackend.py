@@ -1,8 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import os
-
-
+from sqlalchemy import create_engine, text
 
 app = Flask(__name__)
 CORS(app)
@@ -15,13 +14,14 @@ def homepage():
 import iris
 import json
 
-namespace="USER"
-port = os.getenv("DATABASE_PORT", "1972")
-hostname= os.getenv("DATABASE_HOST", "localhost")
-connection_string = f"{hostname}:{port}/{namespace}"
-username = "demo"
-password = "demo"
+username = 'demo'
+password = 'demo'
+hostname = os.getenv('IRIS_HOSTNAME', 'localhost')
+port = '1972' 
+namespace = 'USER'
+CONNECTION_STRING = f"iris://{username}:{password}@{hostname}:{port}/{namespace}"
 
+engine = create_engine(CONNECTION_STRING)
 
 # CRUD operations
 # table name must always be in A.B format. Otherwise SQLUser will get prefixed by default when the table is created 
@@ -32,7 +32,7 @@ def create():
     tableName = request.json.get('tableName')
     schema = request.json.get('schema')
     # print("trying connection string: ", connection_string, flush=True) # useful for debugging
-    conn = iris.connect(connection_string, username, password)
+    conn = engine.connect(connection_string, username, password)
     cursor = conn.cursor()
     try:
         cursor.execute(f"DROP TABLE {tableName}")
@@ -51,7 +51,7 @@ def create():
 @app.route('/getall', methods=['POST'])
 def getall():
     tableName = request.json.get('tableName')
-    conn = iris.connect(connection_string, username, password)
+    conn = engine.connect(connection_string, username, password)
     cursor = conn.cursor()
     try:
         cursor.execute(f"Select * From {tableName}")
@@ -83,7 +83,7 @@ def insert():
             break
         qMarks = qMarks+"?,"
     query = f"INSERT INTO {tableName} {columns} VALUES {qMarks}"
-    conn = iris.connect(connection_string, username, password)
+    conn = engine.connect(connection_string, username, password)
     cursor = conn.cursor()
     try:
         cursor.executemany(query, data)
