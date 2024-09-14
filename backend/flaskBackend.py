@@ -30,7 +30,7 @@ engine = create_engine(CONNECTION_STRING)
 @app.route('/create', methods=['POST'])
 def create():
     tableName = request.json.get('tableName')
-    schema = "(About VARCHAR(255), Skills VARCHAR(255), Experiences VARCHAR(255), Interests VARCHAR(255), Education VARCHAR(255))"
+    schema = "(URL VARCHAR(255), About VARCHAR(255), Skills VARCHAR(255), Experiences VARCHAR(255), Interests VARCHAR(255), Education VARCHAR(255)), vec VECTOR(DOUBLE, 384)"
 
     with engine.connect() as conn:
         try:

@@ -18,6 +18,7 @@ import requests, json, os
 ##
 def request_dummy_info():
     output_data = {
+        "URL": "https://www.linkedin.com/in/rcjan/",
         "About": "CS @ University of Pittsburgh | GHC24 Hi, I'm Rachel! I'm an undergraduate computer science student currently based in Pittsburgh. My career interests include software engineering, machine learning and AI, and game development.",
         "Skills": "Software Development Object-Oriented Programming Assembly Language CLI Java Microsoft Office Computer Science", 
         "Experiences": "Software Engineer Intern at PNC IT Intern at United States Steel Corporation Undergraduate Research Assistant at the University of Pittsburgh",
