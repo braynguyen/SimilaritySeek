@@ -1,11 +1,7 @@
 import requests, json, os
-#from dotenv import load_dotenv
-
-#load_dotenv()
 
 BASE_ADDRESS = "https://nubela.co/proxycurl/api/v2/linkedin"
-#api_key = os.getenv("PROXYCURL_API_KEY")
-api_key = "8KoBrLwPZSGqN4OqAfnfkw"
+api_key = os.getenv("PROXYCURL_API_KEY")
 
 headers = {
    'Authorization': 'Bearer ' + api_key
