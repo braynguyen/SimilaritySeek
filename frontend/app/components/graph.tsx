@@ -22,8 +22,8 @@ function Graph1() {
   }
 
   return (
-    <div>
-      <ForceGraph3D width={620} height={550} graphData={graphData} />
+    <div className='z-10'>
+          <ForceGraph3D width={620} height={550} enableNodeDrag={false} graphData={graphData} />
     </div>
   );
 }

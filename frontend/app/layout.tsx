@@ -26,7 +26,7 @@ export default function RootLayout({
             <div className="hero-body">
             <Link href="/">
               <p className="title">Network Search</p>
-              <p className="subtitle">Sum catchy ig</p>
+              <p className="subtitle">A New Way to Find People</p>
             </Link>
             </div>
           </div>

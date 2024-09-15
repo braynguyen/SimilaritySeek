@@ -1,1 +1,85 @@
-{"nodes": [{"id": "I go to school with my dad"}, {"id": "I go to school on foot"}, {"id": "I go to school by bus"}, {"id": "pancakes"}, {"id": "strawberries"}], "links": [{"source": "I go to school with my dad", "target": "I go to school on foot", "value": 0.5284437537193298}, {"source": "I go to school with my dad", "target": "I go to school by bus", "value": 0.48570185899734497}, {"source": "I go to school with my dad", "target": "pancakes", "value": 0.06965217739343643}, {"source": "I go to school with my dad", "target": "strawberries", "value": -0.07676275819540024}, {"source": "I go to school on foot", "target": "I go to school by bus", "value": 0.593805193901062}, {"source": "I go to school on foot", "target": "pancakes", "value": 0.12603245675563812}, {"source": "I go to school on foot", "target": "strawberries", "value": -0.01560031995177269}, {"source": "I go to school by bus", "target": "pancakes", "value": 0.09605024755001068}, {"source": "I go to school by bus", "target": "strawberries", "value": -0.02695310115814209}, {"source": "pancakes", "target": "strawberries", "value": 0.18747644126415253}]}
+{
+    "nodes": [
+        {
+            "id": "Brayden Nguyen", 
+            "name": "Brayden Nguyen"
+        },
+        {
+            "id": "Rachel Jan",
+            "name": "Rachel Jan"
+        },
+        {
+            "id": "Viktor Osunji",
+            "name": "Viktor Osunji"
+        },
+        {
+            "id": "Jothy Ye",
+            "name": "Jothy Ye"
+        },
+        {
+            "id": "Phillip Ragon",
+            "name": "Phillip Ragon"
+        },
+        {
+            "id": "Sam Altman",
+            "name": "Sam Altman" 
+        }
+    ],
+    "links": [
+        {
+            "source": "Brayden Nguyen",
+            "target": "Rachel Jan",
+            "value": 0.5284437537193298
+        },
+        {
+            "source": "Brayden Nguyen",
+            "target": "Viktor Osunji",
+            "value": 0.48570185899734497
+        },
+        {
+            "source": "Brayden Nguyen",
+            "target": "Jothy Ye",
+            "value": 0.06965217739343643
+        },
+        {
+            "source": "Brayden Nguyen",
+            "target": "Phillip Ragon",
+            "value": -0.07676275819540024
+        },
+        {
+            "source": "Rachel Jan",
+            "target": "Viktor Osunji",
+            "value": 0.593805193901062
+        },
+        {
+            "source": "Rachel Jan",
+            "target": "Jothy Ye",
+            "value": 0.12603245675563812
+        },
+        {
+            "source": "Rachel Jan",
+            "target": "Phillip Ragon",
+            "value": -2.01560031995177269
+        },
+        {
+            "source": "Viktor Osunji",
+            "target": "Jothy Ye",
+            "value": 10.09605024755001068
+        },
+        {
+            "source": "Viktor Osunji",
+            "target": "Phillip Ragon",
+            "value": -0.02695310115814209
+        },
+        {
+            "source": "Jothy Ye",
+            "target": "Phillip Ragon",
+            "value": 0.18747644126415253
+        },
+        {
+            "source": "Sam Altman", 
+            "target": "Phillip Ragon",
+            "value": 5.02242452356353454
+        }
+    ]
+}

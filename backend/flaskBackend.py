@@ -137,9 +137,27 @@ def insert():
 
     return jsonify({"response": "Data inserted successfully"}), 200
 
+@app.route('/returnGraph', methods=['GET'])
+def returnGraph():
+    tableName = request.json.get('tableName')
+
+    data = get(tableName)
+    print(data)
 
 
+def get(tableName):
+    with engine.connect() as conn:
+        try:
+            # Execute the query to fetch all data from the table
+            result = conn.execute(text(f"SELECT * FROM {tableName}"))
+            # Get column names from the result
+            columns = result.keys()
 
+            # Convert rows into a list of dictionaries, zipping column names with each row's values
+            data = [dict(zip(columns, row)) for row in result]
+            return data
+        except Exception as inst:
+            return jsonify({"response": str(inst)}), 400
 
 
 if __name__ == '__main__':
