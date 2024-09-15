@@ -15,7 +15,8 @@ export default function Home() {
         <div className="hero-body">
           <div className="container is-centered">
             <div className="columns is-centered">
-              <div className="column has-text-black">
+              <div className="column has-text-black ">
+              <h1 className="subtitle is-1 has-text-black has-text-centered"> Create a network</h1>
                 <form className="box has-background-white has-text-black">
                   <div className="field is-horizontal">
                     <div className="field-label is-normal">

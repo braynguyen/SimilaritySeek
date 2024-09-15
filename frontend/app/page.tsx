@@ -16,13 +16,22 @@ export default function Home() {
           <div className="container is-centered">
             <div className="columns is-centered">
 
-              <div id= "box3" className="column box has-background-white">
+              <div id="box3" className="column box has-background-white is-flex is-flex-direction-column">
                 <div className="has-text-centered">
-                <h3 className="subtitle is-3 level-item has-text-centered has-text-black">Networks</h3>
+                  <h3 className="subtitle is-3 level-item has-text-centered has-text-black">
+                    Networks
+                  </h3>
                   <p className="has-text-black">Explore available networks</p>
                 </div>
-              </div>
 
+                <div className="mt-auto has-text-centered">
+                  <Link href="/more">
+                    <button id="button2" className="button is-primary is-fullwidth">
+                      View Networks
+                    </button>
+                  </Link>
+                </div>
+              </div>
 
               <div className="column has-text-black">
                 <form className="box has-background-white has-text-black">
@@ -69,6 +78,7 @@ export default function Home() {
                   </div>
                 </form>
               </div>
+
             </div>
           </div>
         </div>
