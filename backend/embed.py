@@ -32,7 +32,7 @@ def embed(sentences):
     embeddings = model.encode(sentences)
 
     # Print the shape of the embeddings
-    print(embeddings.shape)
+    # print(embeddings.shape)
     return embeddings
 
 
@@ -41,7 +41,7 @@ def graph(sentences, filename='graph.json'):
     embeddings = model.encode(sentences)
 
     # Print the shape of the embeddings
-    print(embeddings)
+    # print(embeddings)
 
     def cosine_similarity(embedding1, embedding2):
         return np.dot(embedding1, embedding2) / (np.linalg.norm(embedding1) * np.linalg.norm(embedding2))

@@ -59,3 +59,33 @@ function getData() {
     });
 }
 
+
+function getTopN() {
+    const tableName = document.getElementById('table_name_get_n').value;
+    const id = document.getElementById('id').value;
+    const n = document.getElementById('n').value;
+
+    // Validate input values
+    if (!tableName || !id || !n) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    // Make the API request
+    fetch(`http://127.0.0.1:5000/vectorFind/${id}/${n}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ tableName: tableName }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Display the results
+        document.getElementById('output').textContent = JSON.stringify(data.results, null, 2);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('An error occurred while fetching data.');
+    });
+}
