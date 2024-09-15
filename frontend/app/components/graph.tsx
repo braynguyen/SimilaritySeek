@@ -23,7 +23,7 @@ function Graph1() {
 
   return (
     <div>
-      <ForceGraph3D graphData={graphData} />
+      <ForceGraph3D width={620} height={550} graphData={graphData} />
     </div>
   );
 }

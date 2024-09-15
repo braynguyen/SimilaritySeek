@@ -96,9 +96,9 @@ export default function Test() {
 
               <div id="imageSection" className="box has-background-light has-text-centered">
               <h3 className="subtitle is-3 level-item has-text-centered has-text-black">Graph</h3>
-                <figure className="image is-256x256">
+                <div className="image is-256x256">
                   <Graph1 />
-                </figure>
+                </div>
               </div>
             </div>
             <div className="column is-half has-text-centered"></div>
