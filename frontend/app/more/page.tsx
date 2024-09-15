@@ -26,7 +26,7 @@ export default function Test() {
                     />
                   </figure>
                   <h3 className="subtitle is-3 level-item has-text-centered has-text-black">
-                    Name
+                    Rachel Jan
                   </h3>
                 </div>
 
@@ -39,7 +39,7 @@ export default function Test() {
                     />
                   </figure>
                   <h3 className="subtitle is-3 level-item has-text-centered has-text-black">
-                    Name
+                    Jothy Ye
                   </h3>
                 </div>
 
@@ -52,7 +52,7 @@ export default function Test() {
                     />
                   </figure>
                   <h3 className="subtitle is-3 level-item has-text-centered has-text-black">
-                    Name
+                    Alvin Ryanputra
                   </h3>
                 </div>
               </div>
@@ -65,19 +65,19 @@ export default function Test() {
                   <label className="label has-text-black">Filter by</label>
                   <div className="control has-text-black">
                     <label className="checkbox">
-                      <input type="checkbox" /> Option 1
+                      <input type="checkbox" /> Interests
                     </label>
                   </div>
 
                   <div className="control has-text-black">
                     <label className="checkbox">
-                      <input type="checkbox" /> Option 2
+                      <input type="checkbox" /> Companies
                     </label>
                   </div>
 
                   <div className="control has-text-black">
                     <label className="checkbox">
-                      <input type="checkbox" /> Option 3
+                      <input type="checkbox" /> Education
                     </label>
                   </div>
                 </div>
