@@ -1,14 +1,16 @@
 import requests, json, os
 
-# BASE_ADDRESS = "https://nubela.co/proxycurl/api/v2/linkedin"
-# api_key = os.getenv("PROXYCURL_API_KEY")
+BASE_ADDRESS = "https://nubela.co/proxycurl/api/v2/linkedin"
+api_key = os.getenv("PROXYCURL_API_KEY")
 
-# headers = {
-#    'Authorization': 'Bearer ' + api_key
-#   }
+headers = {
+   'Authorization': 'Bearer ' + api_key
+  }
 
 ##
 # {
+# "Name": string
+# "URL": string
 # "About": string
 # "Skills": []
 # "Experiences": [],
@@ -18,6 +20,7 @@ import requests, json, os
 ##
 def request_dummy_info():
     output_data = {
+        "Name": "Rachel Jan",
         "URL": "https://www.linkedin.com/in/rcjan/",
         "About": "CS @ University of Pittsburgh | GHC24 Hi, I'm Rachel! I'm an undergraduate computer science student currently based in Pittsburgh. My career interests include software engineering, machine learning and AI, and game development.",
         "Skills": "Software Development Object-Oriented Programming Assembly Language CLI Java Microsoft Office Computer Science", 
@@ -36,10 +39,12 @@ def request_info(linkedin):
     response = requests.get(BASE_ADDRESS,
                         params=params,
                         headers=headers)
-    return extract_info(response.json())
+    return extract_info(response.json(), linkedin)
 
 
-def extract_info(input_data):
+def extract_info(input_data, linkedin):
+    name = input_data.get('full_name', '')
+
     about = f"{input_data.get('headline', '')} - {input_data.get('summary', '')}".strip()
     
     skills = []
@@ -65,6 +70,8 @@ def extract_info(input_data):
         education = input_data.get('education')[0].get('school', '')
 
     output_data = {
+        "Name": name,
+        "URL": linkedin,
         "About": about,
         "Skills": list(set(skills)), 
         "Experiences": experiences,
