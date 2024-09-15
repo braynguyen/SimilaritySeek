@@ -79,8 +79,8 @@ def getall():
 def insert():
     tableName = request.json.get('tableName')
     data = linkedin_util.request_dummy_info()  # Assuming this returns a dictionary with data
-    vector = embed(";".join(data.values()))
-    data["vec"] = vector
+    vec = embed(";".join(data.values())).tolist()
+    data["vec"] = str(vec)
 
     # Extract columns from data
     columns = ", ".join(data.keys())  # Example: 'About, Skills, Experiences, Interests, Education'
