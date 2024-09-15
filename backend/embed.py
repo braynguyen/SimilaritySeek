@@ -1,4 +1,5 @@
 import os
+import json
 
 import torch
 import numpy as np
@@ -35,15 +36,33 @@ def embed(sentences):
     return embeddings
 
 
-# def graph
-# # Encode sentences to get embeddings
-# embeddings = model.encode(sentences)
-#
-# # Print the shape of the embeddings
-# print(embeddings)
-#
-# def cosine_similarity(embedding1, embedding2):
-#     return np.dot(embedding1, embedding2) / (np.linalg.norm(embedding1) * np.linalg.norm(embedding2))
-#
-# adjacency = np.array([[cosine_similarity(embeddings[i], embeddings[j]) for j in range(5)] for i in range(5)])
-# print(adjacency)
+def graph(sentences, filename='graph.json'):
+    # Encode sentences to get embeddings
+    embeddings = model.encode(sentences)
+
+    # Print the shape of the embeddings
+    print(embeddings)
+
+    def cosine_similarity(embedding1, embedding2):
+        return np.dot(embedding1, embedding2) / (np.linalg.norm(embedding1) * np.linalg.norm(embedding2))
+
+    data = {
+        'nodes': list(map(lambda x: {'id': x}, sentences)),
+        'links': list({'source': sentences[i], 'target': sentences[j], 'value': cosine_similarity(embeddings[i], embeddings[j])} for i in range(5) for j in range(i+1,5))
+    }
+
+    class MyEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, np.integer):
+                return int(obj)
+            elif isinstance(obj, np.floating):
+                return float(obj)
+            elif isinstance(obj, np.ndarray):
+                return obj.tolist()
+            else:
+                return super(MyEncoder, self).default(obj)
+    with open(filename, 'w') as file:
+        json.dump(data, file, cls=MyEncoder)
+
+graph(s1, 'graph1.json')
+graph(s2, 'graph2.json')
