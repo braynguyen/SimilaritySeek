@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Graph1 from '../components/graph';
 
 export default function Test() {
   return (
@@ -97,11 +97,7 @@ export default function Test() {
               <div id="imageSection" className="box has-background-light has-text-centered">
               <h3 className="subtitle is-3 level-item has-text-centered has-text-black">Graph</h3>
                 <figure className="image is-256x256">
-                  <img
-                    className="is-rounded"
-                    src="https://bulma.io/assets/images/placeholders/256x256.png"
-                    alt="Example"
-                  />
+                  <Graph1 />
                 </figure>
               </div>
             </div>

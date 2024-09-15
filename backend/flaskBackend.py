@@ -26,13 +26,12 @@ CONNECTION_STRING = f"iris://{username}:{password}@{hostname}:{port}/{namespace}
 engine = create_engine(CONNECTION_STRING)
 
 
-# CRUD operations
 
 # Create a table
 @app.route('/create', methods=['POST'])
 def create():
     tableName = request.json.get('tableName')
-    schema = "(URL VARCHAR(255), About VARCHAR(255), Skills VARCHAR(255), Experiences VARCHAR(255), Interests VARCHAR(255), Education VARCHAR(255)), vec VECTOR(DOUBLE, 384)"
+    schema = "(row_id INTEGER PRIMARY KEY AUTOINCREMENT, URL VARCHAR(255), About VARCHAR(255), Skills VARCHAR(255), Experiences VARCHAR(255), Interests VARCHAR(255), Education VARCHAR(255)), vec VECTOR(DOUBLE, 384)"
 
     with engine.connect() as conn:
         try:
@@ -102,6 +101,26 @@ def insert():
             return jsonify({"response": str(inst)}), 400
 
     return jsonify({"response": "Data inserted successfully"}), 200
+
+@app.route('/vector-find/<int:id>/<int:n>', methods=['GET'])
+def find(id, n):
+    query = "SELECT vec FROM Demo.VectorDiagnoses WHERE row_id = ?"
+    with engine.connect() as conn:
+        try:
+            vec = conn.execute(text(query), id)
+        except Exception as e:
+            return jsonify({"response": str(e)}), 400
+
+        try:
+            pass
+        except Exception as e:
+            return jsonify({"response": str(e)}), 400
+
+
+    # sql = "select Top ? row_id, icd9_code, short_title, long_title from Demo.VectorDiagnoses ORDER BY VECTOR_DOT_PRODUCT(long_title_vector, TO_VECTOR(?)) DESC"
+    tableName = request.json.get('tableName')
+
+    pass
 
 
 
