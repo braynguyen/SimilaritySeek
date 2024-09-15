@@ -21,12 +21,12 @@ export default function Test() {
                   <figure className="image is-128x128">
                     <img
                       className="is-rounded"
-                      src="https://bulma.io/assets/images/placeholders/128x128.png"
+                      src="./data/rachel.jpeg"
                       alt="Person"
                     />
                   </figure>
                   <h3 className="subtitle is-3 level-item has-text-centered has-text-black">
-                    Rachel Jan
+                    <a href='https://www.linkedin.com/in/rcjan/'>Rachel Jan</a>
                   </h3>
                 </div>
 
@@ -34,12 +34,12 @@ export default function Test() {
                   <figure className="image is-128x128">
                     <img
                       className="is-rounded"
-                      src="https://bulma.io/assets/images/placeholders/128x128.png"
+                      src="./data/jophy.jpeg"
                       alt="Person"
                     />
                   </figure>
                   <h3 className="subtitle is-3 level-item has-text-centered has-text-black">
-                    Jothy Ye
+                    <a href="https://www.linkedin.com/in/jophy-ye-18063b2b6/">Jophy Ye</a>
                   </h3>
                 </div>
 
@@ -47,12 +47,12 @@ export default function Test() {
                   <figure className="image is-128x128">
                     <img
                       className="is-rounded"
-                      src="https://bulma.io/assets/images/placeholders/128x128.png"
+                      src="./data/alvin.jpeg"
                       alt="Person"
                     />
                   </figure>
                   <h3 className="subtitle is-3 level-item has-text-centered has-text-black">
-                    Alvin Ryanputra
+                    <a href="https://www.linkedin.com/in/alvinryanputra/">Alvin Ryanputra</a>
                   </h3>
                 </div>
               </div>
