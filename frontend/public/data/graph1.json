@@ -17,8 +17,8 @@
             "name": "Jothy Ye"
         },
         {
-            "id": "Phillip Ragon",
-            "name": "Phillip Ragon"
+            "id": "Alvin Ryanputra",
+            "name": "Alvin Ryanputra"
         },
         {
             "id": "Sam Altman",
@@ -43,7 +43,7 @@
         },
         {
             "source": "Brayden Nguyen",
-            "target": "Phillip Ragon",
+            "target": "Alvin Ryanputra",
             "value": -0.07676275819540024
         },
         {
@@ -58,7 +58,7 @@
         },
         {
             "source": "Rachel Jan",
-            "target": "Phillip Ragon",
+            "target": "Alvin Ryanputra",
             "value": -2.01560031995177269
         },
         {
@@ -68,17 +68,17 @@
         },
         {
             "source": "Viktor Osunji",
-            "target": "Phillip Ragon",
+            "target": "Alvin Ryanputra",
             "value": -0.02695310115814209
         },
         {
             "source": "Jothy Ye",
-            "target": "Phillip Ragon",
+            "target": "Alvin Ryanputra",
             "value": 0.18747644126415253
         },
         {
             "source": "Sam Altman", 
-            "target": "Phillip Ragon",
+            "target": "Alvin Ryanputra",
             "value": 5.02242452356353454
         }
     ]

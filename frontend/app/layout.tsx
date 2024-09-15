@@ -25,7 +25,7 @@ export default function RootLayout({
           <div className="navbar-start">
             <div className="hero-body">
             <Link href="/">
-              <p className="title">Network Search</p>
+              <p className="title">SimilaritySeek</p>
               <p className="subtitle">A New Way to Find People</p>
             </Link>
             </div>

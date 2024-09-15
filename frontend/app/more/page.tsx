@@ -52,7 +52,7 @@ export default function Test() {
                     />
                   </figure>
                   <h3 className="subtitle is-3 level-item has-text-centered has-text-black">
-                    Phillip Ragon
+                    Alvin Ryanputra
                   </h3>
                 </div>
               </div>
